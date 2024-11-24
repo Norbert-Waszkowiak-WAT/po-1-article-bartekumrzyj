@@ -1,38 +1,34 @@
-#ifndef UNTITLED1_ARTICLE_H
-#define UNTITLED1_ARTICLE_H
+#ifndef ARTICLE_H
+#define ARTICLE_H
 #include <iostream>
 #include <string>
-#include "author.cpp"   
+#include "author.cpp"
+
 class Article{
-private:
     std::string title;
     Author author;
     int publicationYear;
     std::string journal;
-public:
-Article()
-: title(" "),author(Author()),publicationYear(0),journal(" "){};
-
-Article(string articleTitle,Author articleAuthor,int publicationYear,string journalName)
-:title(articleTitle),author(articleAuthor),publicationYear(publicationYear),journal(journalName){};
-
-Article(Article, &other)
-:title(other.title),author(other.author),publicationYear(other.publicationYear),journal(other.journalName){};
-
-int getPublicationYear(){
-    return publicationYear
-};
-Author getAuthor(){
-    return author;
-};
-std::string getTitle(){
-    return title;
-};
-std::string getJournalName(){
-    return journal;
-};
-void displayInfo(){
-    std:: cout<<"debiljous";
-};
+    public:
+    Article():
+    title(""), author(Author()), publicationYear(0),journal(""){}; 
+    Article(std::string title,Author author,int publicationYear,std::string journal)
+    :title(title), author(author), publicationYear(publicationYear),journal(journal){};
+    Article(Article &other)
+    :title(other.title), author(other.author), publicationYear(other.publicationYear), journal(other.journal){};
+    void displayinfo(){
+        std::cout<<"AZBEST";
+    }
+    std::string getTitle(){
+        return title;
+    }
+    Author getAuthor(){
+        return author;
+    }
+    int getPublicationYear(){
+        return publicationYear;
+    }std::string getJournal(){
+     return journal;   
+    }
 };
 #endif
